@@ -54,7 +54,7 @@ router.get('/logout',async(req,res)=>{
       // уничтожение сессии (удаление файла)
       await req.session.destroy();
       // чистим куку (удаление в браузере)
-      // res.clearCookie("user_sid");
+      res.clearCookie("user_sid");
       // перенаправляемся на корень
       res.redirect("/");
     } catch (error) {
