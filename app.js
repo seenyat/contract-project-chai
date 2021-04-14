@@ -4,6 +4,7 @@ const indexRouter = require('./routes/index')
 const app = express()
 
 middleware(app)
+app.use(express.static(__dirname + '/public'));
 
 app.use('/', indexRouter);
 
