@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt-nodejs')
 
 
 router.get('/registration', (req, res) => {
-  res.render('entries/registration');
+  res.render('registration');
 });
 
 router.post('/registration', async (req, res) => {
@@ -25,12 +25,12 @@ router.post('/registration', async (req, res) => {
   })
   req.session.user = user
   console.log(user)
-   res.render('entries/success',{username: req.session.user.username},(err,html)=>{res.json({status:html})});
+   res.render('success',{username: req.session.user.username},(err,html)=>{res.json({status:html})});
 });
 
 
 router.get('/login',(req,res)=>{
-  res.render('entries/login', {status: 'Введите логин и пароль'})
+  res.render('login', {status: 'Введите логин и пароль'})
 })
 
 
@@ -41,10 +41,10 @@ router.post('/login', async (req, res) => {
     if (bcrypt.compareSync(password,checkUser.password)){
       req.session.user = checkUser  
         let user = req.session.user.username
-      return res.render('entries/success', { username: user})
+      return res.render('success', { username: user})
     } 
   } 
-  res.render("entries/login", {status: 'Неверные данные'});
+  res.render("login", {status: 'Неверные данные'});
 });
 
 router.get('/logout',async(req,res)=>{
