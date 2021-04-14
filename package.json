@@ -1,0 +1,22 @@
+{
+  "name": "contract-project-chai",
+  "version": "1.0.0",
+  "description": "Chai",
+  "main": "app.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/seenyat/contract-project-chai.git"
+  },
+  "keywords": [
+    "chai"
+  ],
+  "author": "Team Bees",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/seenyat/contract-project-chai/issues"
+  },
+  "homepage": "https://github.com/seenyat/contract-project-chai#readme"
+}
