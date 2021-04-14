@@ -10,26 +10,24 @@
 </head>
 <body>
   <header>
-    <nav class="navbar-container">
+    <nav class="navbar">
       <div class="navbar-start">
           <a class="navbar-item" href="/">123</a>
       </div>
       <div class="navbar-menu">
-          <a class="navbar-item" href="/">123</a>
-          <a class="navbar-item" href="/">123</a>
-          <a class="navbar-item" href="/">123</a>
-          <a class="navbar-item" href="/">123</a>
-          <a class="navbar-item" href="/">123</a>
+        <div class="navbar-start">
+          <a class="navbar-item" href="/login">Залогиниться</a>
+          <a class="navbar-item" href="/register">Зарегистрироваться</a>
+        </div>
+        <div class="navbar-end">
+          <a class="navbar-item" href="/">
+            <div class="buttons">
+              <a class="button is-primary">Зарегистрироваться</a>
+              <a class="button is-light">Войти</a>
+            </div>
+          </a>
+        </div>
       </div>
-       <div class="max-w-700 center wrap-float">
-      <nav class="clearfix mar-b-1">
-        <ul style="display: flex; flex-direction: row; gap: 20px"class="row no-bullets no-margin no-padding right">
-          {{> user }}
-          <li class="pipe-separate t-light-green left"><a href="/">home</a></li>
-        </ul>
-      </nav>
-
-      <div class="logo-container">
     </nav>
   </header>
   {{{body}}}

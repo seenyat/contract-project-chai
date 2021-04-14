@@ -1,13 +1,30 @@
+
 module.exports = function (app){
   console.log(process.env)
+  const session = require('express-session')
+  const morgan = require('morgan')
   const path = require('path')
   const express = require('express')
   const hbs = require('hbs')
-  // const FileStore = require('session-file-store')(session)
+  const dbConnect = require('./db-connect')
+  const FileStore = require('session-file-store')(session)
  
  
   hbs.registerPartials(__dirname + '/../views')
   app.set('view engine', 'hbs')
+  app.use(morgan('dev'))
+
+  app.use(session({
+    store: new FileStore(), // тип хранилища FileStore, который создает нам папку с файлами
+    key: "user_sid", // ключ - название куки
+    secret: "anything_here", // слово, используемое для шифрования
+    resave: false, //  настройка пересохранения куки, при каждом запросе
+    saveUninitialized: false, // настройка создания сессии, даже без авторизации
+    cookie: {
+      expires: 600000, // время жизни куки
+      httpOnly: false, // по умолчанию true
+    },
+  }))
 
   app.set('views', path.join(__dirname, '../views'));
   app.use(express.json())
