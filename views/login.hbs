@@ -1,0 +1,8 @@
+{{#if status}}
+<div>{{status}}</div>
+{{/if}}
+<form class="login-form" action="/login" method="post">
+  <input required placeholder="user@example.com" name="email" type="email">
+  <input required placeholder="Пароль" name="password"  minlength="5" type="password">
+  <button>Войти</button>
+</form>
