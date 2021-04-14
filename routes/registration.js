@@ -5,11 +5,12 @@ const bcrypt = require('bcrypt-nodejs')
 
 
 
-router.get('/registration', (req, res) => {
+
+router.get('/register', (req, res) => {
   res.render('registration');
 });
 
-router.post('/registration', async (req, res) => {
+router.post('/register', async (req, res) => {
   let {username, email, password} = req.body
   console.log(username, email, password)
 
