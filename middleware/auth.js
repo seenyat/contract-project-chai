@@ -2,9 +2,9 @@
 // This usually happens when you stop your express server after login, your cookie still remains saved in the browser.
 function cookiesCleaner(req, res, next) {
   // если есть кука и нет сессии - удаляем куку
+  console.log(req.session.user );
   if (req.cookies.user_sid && !req.session.user) {
     res.clearCookie("user_sid");
-    console.log("123");
 
   }
   next();
