@@ -1,15 +1,23 @@
-<main>
-  <div class="is-flex tea-list is-flex-direction-row is-flex-wrap-wrap container ">
+<main class="p-5">
+  <div class="tea-list is-flex-direction-row is-flex-wrap-wrap container ">
     {{#each teaList}}
-      <div class="m-1 p-1 is-flex-grow-1 card">
-
-        <div class="card-header is-2">
-          <div class="card-header-title">
+      <div class="m-1 p-1 is-two-thirds card">
+        <div class="card-image">
+          <figure class="image is-3by1">
+            <img src="https://www.comunicaffe.com/wp-content/uploads/2015/02/green-tea-leaves-640x400.jpg" alt="">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="title is-4 card-header-title">
             {{this.name}}
           </div>
         </div>
         <div class="card-content ">{{this.description}}</div>
       </div>
     {{/each}}
+    <div class="section is-flex is-flex-direction-column container map-container">
+      <h2>Карта</h2>
+      <div class="container is-full-width"id="mapbox">456</div>
+    </div>
   </div>
 </main>

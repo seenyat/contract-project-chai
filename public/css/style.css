@@ -1,5 +1,24 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css";
-
+body{
+  background-color: rgb(238,238,238);
+}
 nav{
-  padding: 0 150px;
+  padding: 0.5em 1em;
+}
+.container{
+  display: grid;
+	grid-gap: 0.5em;
+  align-content: stretch;
+  justify-content: space-around; 
+  place-items: center;
+  justify-items: center;
+}
+.logo{
+  font-size: 1.5em;
+  transition: all ease 50ms;
+  color: rgb(58, 169, 50);
+}
+.logo:hover{
+  font-weight: bold;
+  color: rgb(48, 149, 30) !important;
 }

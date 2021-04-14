@@ -1,8 +1,26 @@
-{{#if status}}
-<div>{{status}}</div>
-{{/if}}
-<form class="login-form" action="/login" method="post">
-  <input required placeholder="user@example.com" name="email" type="email">
-  <input required placeholder="Пароль" name="password"  minlength="5" type="password">
-  <button>Войти</button>
-</form>
+<main class="p-5">
+  <div class="p-2 container">
+    <form class="registration-form field" action="/login" method="post">
+      <div class="title" id="message">Войти</div>
+      <div class="field">
+        <div class="control has-icons-left">
+          <input class="input" required placeholder="user@example.com" name="email" type="email">
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control has-icons-left">
+          <input class="input" required placeholder="Пароль" name="password"  minlength="5" type="password">
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+        </div>
+      </div>
+        <div class="control">
+          <button class="button is-fullwidth is-link">Войти</button>
+        </div>
+    </form>
+  </div>
+</main>
