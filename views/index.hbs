@@ -1,3 +1,15 @@
-<div class="app-container">
-  
-</div>
+<main>
+  <div class="is-flex tea-list is-flex-direction-row is-flex-wrap-wrap container ">
+    {{#each teaList}}
+      <div class="m-1 p-1 is-flex-grow-1 card">
+
+        <div class="card-header is-2">
+          <div class="card-header-title">
+            {{this.name}}
+          </div>
+        </div>
+        <div class="card-content ">{{this.description}}</div>
+      </div>
+    {{/each}}
+  </div>
+</main>
