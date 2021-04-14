@@ -1,0 +1,7 @@
+{{#if username}}
+<a class="navbar-item" href="/login">{{username}}</a>
+<a class="navbar-item" href="/logout">Выйти</a>
+{{else}}
+<a class="navbar-item button is-light" href="/login">Залогиниться</a>
+<a class="navbar-item button is-primary" href="/register">Зарегистрироваться</a>
+{{/if}}
