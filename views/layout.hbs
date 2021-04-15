@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
   <script defer src= "/js/map.js"></script>
   <script defer src="/js/application.js"></script>
+  <script defer src="/js/layout.js"></script>
   <title>Chai</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
     <nav class="navbar">
       <div class="navbar-brand">
         <a class="navbar-item logo" href="/">
-          TeaStory
+          TeaStory<i class="fa fa-leaf" aria-hidden="true"></i> 
         </a>
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
         <span aria-hidden="true"></span>
@@ -28,12 +29,13 @@
       <div class="navbar-menu">
         <div class="navbar-start">
         </div>
-      <div class="navbar-end">
-          <div class="navbar-item" href="/">
-            <div class="buttons">
-              {{> auth}}
+        <div class="navbar-end">
+            <div class="navbar-item" href="/">
+              <div class="buttons">
+                {{> auth}}
+              </div>
             </div>
-          </div>
+        </div>
       </div>
     </nav>
   </header>
