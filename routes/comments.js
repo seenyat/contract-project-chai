@@ -15,4 +15,13 @@ router.post('/add', async function (req, res) {
   // res.redirect('back');
 })
 
+router.post('/comments/delete/:id', async function (req, res) {
+  let user = req.session.user;
+  let commentObj = await Comment.create({
+    content: req.body.content,
+    author: user._id,
+    article: req.body.id,
+  })
+})
+
 module.exports = router;
