@@ -1,28 +1,33 @@
-const updateUser = document.forms.update.addEventListener('submit', async (event) => {
-  event.preventDefault()
+const updateUser = document.querySelector('.update-user')
 
-  const action = event.target.action
-  const username = document.querySelector('#username').value
-  const email = document.querySelector('#email').value
-  const role= document.querySelector('#role')
-console.log(username,email);
+if(updateUser){
+  updateUser.addEventListener('submit', async (event) => {
+    event.preventDefault()
 
-  const response = await fetch(action, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': "application/json"
-    },
-    body: JSON.stringify({ username, email, role })
+    const action = event.target.action
+    const username = document.querySelector('#username').value
+    const email = document.querySelector('#email').value
+    const role= document.querySelector('#role')
+  console.log(username,email);
+
+    const response = await fetch(action, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': "application/json"
+      },
+      body: JSON.stringify({ username, email, role })
+    })
+    let textResponse = await response.json()
+    
   })
-  let textResponse = await response.json()
-  
-})
+}
 
 const deleteOne = document.querySelector('.delete-button')
-console.log(deleteOne);
 deleteOne.addEventListener('click', async(event)=>{
+  console.log(event.target);
   event.preventDefault()
-action =event.target.href
+  event.stopPropagation();
+action ='/comments/delete/'+ event.currentTarget.id
 const response = await fetch(action,{
   method:'delete'
 })
