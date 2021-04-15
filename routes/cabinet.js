@@ -8,7 +8,7 @@ router.get('/profile/:id', async(req, res) => {
   const profile = await User.findById(req.params.id) 
 
 
-  res.render('cabinet',{user:profile});
+  res.render('cabinet',{user:profile,username:profile});
 });
 
 
