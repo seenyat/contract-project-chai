@@ -16,7 +16,19 @@ console.log(username,email);
   })
   let textResponse = await response.json()
   
+})
 
+const deleteOne = document.querySelector('.delete-button')
+console.log(deleteOne);
+deleteOne.addEventListener('click', async(event)=>{
+  event.preventDefault()
+action =event.target.href
+const response = await fetch(action,{
+  method:'delete'
+})
+let textResponse= await response.text()
+
+deleteOne.parentElement.parentElement.parentElement.parentElement.remove()
 
 
 

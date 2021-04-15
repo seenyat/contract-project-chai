@@ -2,7 +2,7 @@ const router = require('express').Router()
 const User = require('../models/user')
 const bcrypt = require('bcrypt-nodejs');
 const Tea = require('../models/tea');
-
+const Comment=require('../models/comment')
 
 
 router.get('/profile/:id', async(req, res) => {
@@ -32,6 +32,10 @@ router.put('/profile/:id', async (req, res) => {
 res.json(x)
 })
 
+router.delete('/comments/delete/:id',async(req,res)=>{
+  await  Comment.deleteOne({_id:req.params.id}) 
+  res.send('delete') 
+})
 
 
 
