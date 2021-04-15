@@ -1,7 +1,39 @@
-<div style="background-color: black; border-radius: 5px;"id="message"></div>
-<form class="registration-form" action="/register" method="post">
-  <input required placeholder="Логин" name="username" type="text">
-  <input required placeholder="user@example.com" name="email" type="email">
-  <input required placeholder="Пароль" name="password"  minlength="5" type="password">
-  <button>Зарегистрироваться</button>
-</form>
+<main class="p-5">
+  <div class="is-large container">
+    <form class="registration-form field" action="/register" method="post">
+      <div class="title" id="message">Зарегистрироваться</div>
+      <div class="field">
+        <div class="control has-icons-left">
+          <input class="input" required placeholder="Логин" name="username" type="text">
+           <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+            </span>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control has-icons-left">
+          <input class="input" required placeholder="user@example.com" name="email" type="email">
+          <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+          </span>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control has-icons-left">
+          <input class="input" required placeholder="Пароль" name="password"  minlength="5" type="password">
+          <span class="icon is-small is-left">
+            <i class="fas fa-key"></i>
+          </span>
+        </div>
+      </div>
+        <div class="control is-fullwidth">
+          <button class="button is-fullwidth is-link">
+            <span class="icon">
+              <i class="fas fa-user-plus"></i>
+            </span>
+            <span>Зарегистрироваться</span>
+          </button>
+        </div>
+    </form>
+  </div>
+</main>
