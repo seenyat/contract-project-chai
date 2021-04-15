@@ -1,25 +1,25 @@
-{{!-- <div class="box">
-<div class="name">{{user.username}}</div>
-<div class="email">{{user.email}}</div>
-<div class="status">{{user.role}}</div>
-<div class="comment">Комментарии</div>
-</div> --}}
+<form name="update" action='/profile/{{username._id}}'>
 <div class="container">
 <article class="message is-success">
   <div class="message-header">
     <p>Profile</p>
   </div>
+  
   <div class="message-body">
-    <strong> Логин</strong> :  {{user.username}}
+    <input id="username" > Логин :  {{user.username}}
   </div>
   <div class="message-body">
-   <strong>Почта</strong>  :  {{user.email}}
+   <input id="email">Почта  :  {{user.email}}
   </div>
   <div class="message-body">
-   <strong>Статус</strong>  : {{user.role}}
+   <input>Статус  : {{user.role}}
   </div>
   <div class="message-body">
-   <strong>Комментарии</strong>  :
+   <input>Комментарии  :
+  </div>
   </div>
 </article>
+<button type="submit" >redact</button>
 </div>
+
+</form>

@@ -51,15 +51,10 @@ router.post('/login', async (req, res) => {
 router.get('/logout',async(req,res)=>{
   if (req.session.user) {
     try {
-      // уничтожение сессии (удаление файла)
-      // console.log(req.session)
       await req.session.destroy();
-      // чистим куку (удаление в браузере)
-      res.clearCookie("user_sid");
-      // перенаправляемся на корень
-      res.redirect("/");
+     res.clearCookie("user_sid");
+     res.redirect("/");
     } catch (error) {
-      // улетаем в обработчик ошибок (middleware/error-handlers)
       next(error);
     }
   } else {
