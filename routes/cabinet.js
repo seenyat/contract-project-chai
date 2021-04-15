@@ -17,7 +17,8 @@ router.put('/profile/:id', async (req, res) => {
  let x = await User.findOneAndUpdate(
     { _id: req.params.id },
     {$set: { username: req.body.username,
-              email: req.body.email } } )
+              email: req.body.email,
+              role:req.boby.role  } } )
 
 res.json(x)
 })
