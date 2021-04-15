@@ -12,7 +12,7 @@ router.post('/add', async function (req, res) {
   })
 
 
-  console.log(commentObj)
+  // res.redirect('back');
 })
 
 module.exports = router;

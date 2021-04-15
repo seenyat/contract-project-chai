@@ -1,0 +1,30 @@
+ 
+ <article class="media">
+      <figure class="media-left">
+        <p class="image is-48x48">
+          <img src="https://bulma.io/images/placeholders/96x96.png">
+        </p>
+      </figure>
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <strong>{{this.author.username}}</strong>
+            <br>
+            {{this.content}}
+            <br>
+          </p>
+          <small>
+            {{username}}
+            {{#if username}}
+            <button class="button is-danger is-small is-outlined">
+              <span>Удалить</span>
+              <span class="icon is-small">
+                <i class="fas fa-times"></i>
+              </span>
+            </button>
+            {{/if}}
+          </small>
+        </div>
+      </div>
+    </article>
+</article>

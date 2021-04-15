@@ -5,13 +5,22 @@ body{
 nav{
   padding: 0.5em 1em;
 }
-.container{
+.container.tea-list{
   display: grid;
 	grid-gap: 0.5em;
   align-content: stretch;
   justify-content: space-around; 
-  place-items: center;
+  place-items: stretch;
   justify-items: center;
+  
+  grid-template-columns: 50% 50%;
+
+}
+.container.tea-list .card{
+  transition: all ease 50ms;
+}
+.container.tea-list .card:hover {
+  background-color: rgb(238,238,255);
 }
 .logo{
   font-size: 1.5em;
