@@ -5,10 +5,15 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic2VlbnlhdCIsImEiOiJja25odW9sY3YzaXBmMnBwOWx4M
 var map = new mapboxgl.Map({
   container : 'mapbox',
   style : 'mapbox://styles/mapbox/streets-v11',
-  zoom : 11,
-  center : [37.618423, 55.751244],
-  pitch : 45,
+  zoom : 3,
+  center : [120.99111298633977,23.78134985215216],
   bearing : 17.6
+});
+
+map.loadImage('/861054.png', function(error, image) {
+if (error) throw error;
+// Add the loaded image to the style's sprite with the ID 'kitten'.
+map.addImage('kitten', image);
 });
 
 map.on('load', function () {
