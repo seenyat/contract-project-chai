@@ -1,0 +1,10 @@
+{{#ifEquals username.role "Администратор"}}
+<a class="navbar-item" href="/admin/{{username._id}}">
+<button class="button is-primary">
+
+<span class="icon">
+      <i class="fas fa-cog"></i>
+    </span>
+  <span>Панель управления</span>
+</button></i> </a>
+{{/ifEquals}}

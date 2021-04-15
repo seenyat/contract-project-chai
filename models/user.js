@@ -4,7 +4,7 @@ const userScheme = new Schema({
   username: String,
   email: String,
   password: String,
-  role: {type: String, default: 'user'},
+  role: {type: String, default: 'Пользователь'},
   comments: [{type: Schema.Types.ObjectId, ref: 'comments'}]
 }
 );

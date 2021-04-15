@@ -11,8 +11,8 @@ router.get('/register', (req, res) => {
 });
 
 router.post('/register', async (req, res) => {
-  let {username, email, password} = req.body
-  console.log(username, email, password)
+  let {username, email, password, role} = req.body
+  // console.log(username, email, password, role)
 
   let checkUser = await User.find({email: email})
   if(checkUser.length > 0){
@@ -22,11 +22,11 @@ router.post('/register', async (req, res) => {
     return
   }
   let user = await User.create({
-    username,email,password: bcrypt.hashSync(password)
+    username,email,password: bcrypt.hashSync(password), role
   })
   req.session.user = user
-  console.log(user)
-   res.render('success',{username: req.session.user},(err,html)=>{res.json({status:html})});
+  // console.log(user)
+   res.redirect(302, '/');
 });
 
 
@@ -41,7 +41,12 @@ router.post('/login', async (req, res) => {
   if(checkUser){
     if (bcrypt.compareSync(password,checkUser.password)){
       req.session.user = checkUser  
-        let user = req.session.user
+      // let user = req.session.user
+      if(checkUser.role == 'Администратор'){
+        req.session.user.admin = '123123';
+        console.log(req.session.user.admin + 'дыун')
+      }
+      // console.log(user)
       return res.redirect(301, '/')
     } 
   } 

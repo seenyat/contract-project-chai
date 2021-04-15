@@ -18,7 +18,19 @@ router.get('/tea/:id', async function (req, res) {
   // console.log(teaObj)
   let comments = await Comment.find({article: id}).populate('author')
   if (req.session.user) {
-    console.log(req.session.user)
+    // console.log(req.session.user)
+    return res.render('tea', {tea: teaObj, username: req.session.user, comments})
+  }
+  res.render('tea', {tea: teaObj, comments})
+})
+
+router.delete('/tea/:id', async function (req, res) {
+  let id = req.params.id
+  let teaObj = await Tea.findOne({_id: id})
+  // console.log(teaObj)
+  let comments = await Comment.find({article: id}).populate('author')
+  if (req.session.user) {
+    // console.log(req.session.user)
     return res.render('tea', {tea: teaObj, username: req.session.user, comments})
   }
   res.render('tea', {tea: teaObj, comments})

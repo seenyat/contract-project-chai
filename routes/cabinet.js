@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const User = require('../models/user')
-const bcrypt = require('bcrypt-nodejs')
+const bcrypt = require('bcrypt-nodejs');
+const Tea = require('../models/tea');
 
 
 
@@ -9,6 +10,14 @@ router.get('/profile/:id', async(req, res) => {
 
 
   res.render('cabinet',{user:profile,username:profile});
+});
+
+router.get('/admin/:id', async(req, res) => {
+  const profile = await User.findById(req.params.id) 
+  const posts = await Tea.find({}) 
+
+
+  res.render('controlpanel',{user:profile,username:profile, posts});
 });
 
 
