@@ -15,9 +15,7 @@ nav{
   justify-content: space-around; 
   place-items: stretch;
   justify-items: center;
-  
   grid-template-columns: 50% 50%;
-
 }
 .container.tea-list .card{
   transition: all ease 50ms;
