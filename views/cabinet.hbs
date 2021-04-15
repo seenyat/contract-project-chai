@@ -1,6 +1,25 @@
-
+{{!-- <div class="box">
 <div class="name">{{user.username}}</div>
 <div class="email">{{user.email}}</div>
 <div class="status">{{user.role}}</div>
 <div class="comment">Комментарии</div>
-
+</div> --}}
+<div class="container">
+<article class="message is-success">
+  <div class="message-header">
+    <p>Profile</p>
+  </div>
+  <div class="message-body">
+    <strong> Логин</strong> :  {{user.username}}
+  </div>
+  <div class="message-body">
+   <strong>Почта</strong>  :  {{user.email}}
+  </div>
+  <div class="message-body">
+   <strong>Статус</strong>  : {{user.role}}
+  </div>
+  <div class="message-body">
+   <strong>Комментарии</strong>  :
+  </div>
+</article>
+</div>
