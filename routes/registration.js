@@ -26,7 +26,7 @@ router.post('/register', async (req, res) => {
   })
   req.session.user = user
   console.log(user)
-   res.render('success',{username: req.session.user.username},(err,html)=>{res.json({status:html})});
+   res.render('success',{username: req.session.user},(err,html)=>{res.json({status:html})});
 });
 
 
@@ -41,8 +41,8 @@ router.post('/login', async (req, res) => {
   if(checkUser){
     if (bcrypt.compareSync(password,checkUser.password)){
       req.session.user = checkUser  
-        let user = req.session.user.username
-      return res.render('success', { username: user})
+        let user = req.session.user
+      return res.redirect(301, '/')
     } 
   } 
   res.render("login", {status: 'Неверные данные'});
@@ -52,7 +52,7 @@ router.get('/logout',async(req,res)=>{
   if (req.session.user) {
     try {
       // уничтожение сессии (удаление файла)
-      console.log(req.session)
+      // console.log(req.session)
       await req.session.destroy();
       // чистим куку (удаление в браузере)
       res.clearCookie("user_sid");
