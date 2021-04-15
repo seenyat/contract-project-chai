@@ -6,9 +6,64 @@
   </p>
   <div class="panel-block">
     <div class="panel-block">
-      <button class="button is-link is-success is-fullwidth">
+      <button id="addTea"class="button is-link is-success is-fullwidth">
         Добавить новый чай
       </button>
+      <div class="modal is-active">
+        <div class="modal-background"></div>
+          <div class="modal-content">
+            <div class="box">
+              <div class="title">Добавить новый чай.</div>
+              <form action="/tea/add" enctype="multipart/form-data" method="post">
+                <div class="field">
+              <div class="control has-icons-left">
+                <input class="input" required placeholder="Сорт" name="name" type="text">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-leaf"></i>
+                  </span>
+              </div>
+            </div>
+            <div class="field">
+              <div class="control has-icons-left">
+                <textarea class="textarea is-fixed" required placeholder="Описание чая" name="description" type="text"></textarea>
+              </div>
+            </div>
+            <div class="field">
+              <div class="control has-icons-left">
+                <input class="input" required placeholder="Происхождение" name="location"  type="text">
+                <span class="icon is-small is-left">
+                  <i class="fa fa-location-arrow" aria-hidden="true"></i>
+                </span>
+              </div>
+            </div>
+            <div class="file field has-name is-boxed">
+              <label class="control file-label">
+                <input class="file-input" type="file" name="picture">
+                <span class="file-cta">
+                  <span class="file-icon">
+                    <i class="fas fa-upload"></i>
+                  </span>
+                  <span class="file-label">
+                    Выберите файл
+                  </span>
+                </span>
+                <span class="file-name">
+                </span>
+              </label>
+            </div>
+            <div class="control is-fullwidth">
+              <button class="button is-large is-fullwidth is-success">
+                <span class="icon">
+                  <i class="fas fa-plus"></i>
+                </span>
+                <span>Добавить</span>
+              </button>
+            </div>
+        </form>
+      </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
     </div>
     <p class="control has-icons-left">
       <input class="input" type="text" placeholder="Search">
@@ -18,11 +73,12 @@
     </p>
   </div>
   {{#each posts}}
-  <a href="" class="panel-block is-active">
+  <a href="/tea/{{this._id}}" class="panel-block is-active">
     <span class="panel-icon">
-      <i class="fas fa-book" aria-hidden="true"></i>
+      <i class="fas fa-leaf" aria-hidden="true"></i>{{this.comment}}
     </span>
-    {{this.name}}
+    <span>{{this.name}}</span>
+    
   </a>
   {{/each}}
 </nav>
