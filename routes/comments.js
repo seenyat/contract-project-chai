@@ -5,3 +5,5 @@ const router = express.Router()
 router.post('/comments/add', async function (req, res) {
   console.log(req.body)
 })
+
+module.exports = router;
