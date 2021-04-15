@@ -1,5 +1,5 @@
 {{#if username}}
-<a class="navbar-item" href="/login">{{username}}</a>
+<a class="navbar-item" href="/profile/{{username._id}}">{{username.username}}</a>
 <a class="navbar-item" href="/logout">Выйти</a>
 {{else}}
 <a class="navbar-item button is-light" href="/login">Залогиниться</a>
