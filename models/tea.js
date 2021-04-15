@@ -2,8 +2,8 @@ const { Schema, model } = require('mongoose');
 
 const teaSchema = new Schema({
   name: String,
-  price: String,
   description: String,
+  image: String,
   location: String,
   locationCoords: String
 });
