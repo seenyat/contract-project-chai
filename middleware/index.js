@@ -12,6 +12,9 @@ module.exports = function (app){
   const cookieParser = require('cookie-parser')
 
   hbs.registerPartials(__dirname + '/../views')
+  hbs.registerHelper('ifEquals', function(arg1, arg2, options) {
+    return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+});
   console.log(__dirname + '/../views')
   app.set('view engine', 'hbs')
   app.use(morgan('dev'))

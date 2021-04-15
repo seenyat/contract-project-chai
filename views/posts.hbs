@@ -1,0 +1,29 @@
+
+<div class="box">
+<nav class="panel is-success">
+  <p class="panel-heading">
+    Сорта чая
+  </p>
+  <div class="panel-block">
+    <div class="panel-block">
+      <button class="button is-link is-success is-fullwidth">
+        Добавить новый чай
+      </button>
+    </div>
+    <p class="control has-icons-left">
+      <input class="input" type="text" placeholder="Search">
+      <span class="icon is-left">
+        <i class="fas fa-search" aria-hidden="true"></i>
+      </span>
+    </p>
+  </div>
+  {{#each posts}}
+  <a href="" class="panel-block is-active">
+    <span class="panel-icon">
+      <i class="fas fa-book" aria-hidden="true"></i>
+    </span>
+    {{this.name}}
+  </a>
+  {{/each}}
+</nav>
+</div>

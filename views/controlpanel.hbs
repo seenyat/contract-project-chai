@@ -1,0 +1,30 @@
+<main class="container">
+  <div class="m-5 title">Настройки</div>
+  <div class="p-5 columns">
+    <div class="column">
+      <aside class="menu">
+        <p class="menu-label">
+          Основные
+        </p>
+        <ul class="menu-list">
+          <li><a>Посты</a></li>
+          <li><a>Пользователи</a></li>
+        </ul>
+        <p class="menu-label">
+          Чай
+        </p>
+        <ul class="menu-list">
+          <li><a class="is-active">Сорта чая</a></li>
+          <li>
+            <a >Администраторы</a>
+          </li>
+          <li><a>Карта</a></li>
+          <li><a>Сброс пароля</a></li>
+        </ul>
+      </aside>
+    </div>
+    <div class="column is-two-thirds">
+      {{> posts}}
+    </div>
+  </div>
+</main>
