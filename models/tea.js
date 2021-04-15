@@ -5,7 +5,7 @@ const teaSchema = new Schema({
   description: String,
   image: String,
   location: String,
-  locationCoords: String
+  locationCoords: [String]
 });
 
 // teaSchema.statics.mostRecent = async function () {

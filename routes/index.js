@@ -36,6 +36,17 @@ router.get('/tea/:id', async function (req, res) {
   }
   res.render('tea', {tea: teaObj, comments})
 })
+router.get('/teaname/:id', async function (req, res) {
+  let nameTea = req.params.id
+  let teaObj = await Tea.findOne({name: nameTea})
+  console.log(nameTea, teaObj)
+  let comments = await Comment.find({article: teaObj._id}).populate('author')
+  if (req.session.user) {
+    // console.log(req.session.user)
+    return res.render('tea', {tea: teaObj, username: req.session.user, comments})
+  }
+  res.render('tea', {tea: teaObj, comments})
+})
 
 router.delete('/tea/:id', async function (req, res) {
   
@@ -43,6 +54,13 @@ router.delete('/tea/:id', async function (req, res) {
 
 router.post('/tea/add', upload.single('picture'),  async function (req, res) {
   console.log(req.file)
+  let {description, location, name} = req.body;
+  Tea.create({
+    name: name,
+    description: description,
+    image: req.file.filename,
+    location: location,
+  })
   console.log(req.body)
 })
 
