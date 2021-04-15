@@ -10,8 +10,11 @@
 {{/if}}
 
 {{!-- {{username.username}} --}}
+<div class="columns">
 {{#if username}}
-<div class="is-large container">
+
+
+<div class="is-small m-5 p-5 column box">
     <form class="registration-form field is-fullwidth" action="/comments/add" method="post">
       <div class="title" id="message">Оставить комментарий</div>
       <div class="field">
@@ -34,8 +37,9 @@
       </div>
   </form>
 </div>
+<div class="column"></div>
 {{else }}
-<div class="is-large container">
+<div class="is-small has-background-white-bis m-5 p-5 column box">
     <form class="registration-form field is-fullwidth" action="/comments/add" method="post">
       <div class="title" id="message">Оставить комментарий</div>
       <div class="m-2 control is-fullwidth">
@@ -63,4 +67,8 @@
 
   </form>
 </div>
+<div class="column"></div>
+
+</div>
 {{/if}}
+</div>

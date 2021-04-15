@@ -1,6 +1,16 @@
 {{#if username}}
-<a class="navbar-item" href="/profile/{{username._id}}">{{username.username}}</a>
-<a class="navbar-item" href="/logout">Выйти</a>
+<a class="navbar-item" href="/profile/{{username._id}}">
+<button class="button is-success">
+
+<span class="icon">
+      <i class="fas fa-user-plus"></i>
+    </span>
+  <span>{{username.username}}</span>
+</button></i> </a>
+<a class="navbar-item" href="/logout">
+<button class="button is-light is-danger">
+  <span>Выйти</span>
+</button></i> </a>
 {{else}}
 <a class="navbar-item button is-light" href="/login">Залогиниться</a>
 <a class="navbar-item button is-primary" href="/register">Зарегистрироваться</a>
