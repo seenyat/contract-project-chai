@@ -73,11 +73,19 @@
     </p>
   </div>
   {{#each posts}}
-  <a href="/tea/{{this._id}}" class="panel-block is-active">
+  <a href="/tea/{{this._id}}" class="panel-block tea is-active">
     <span class="panel-icon">
       <i class="fas fa-leaf" aria-hidden="true"></i>{{this.comment}}
     </span>
     <span>{{this.name}}</span>
+    <div class="buttons">
+  <button data-id="/tea/{{this._id}}" id="deletePost" class="button is-small is-light is-danger"><span>Удалить</span> <span class="icon is-small">
+      <i class="fas fa-times"></i>
+    </span></button>
+  <button data-id="/tea/{{this._id}}" id="editPost" class="button is-small is-light is-info"><span>Редактировать</span><span class="icon is-small">
+      <i class="fas fa-edit"></i>
+    </span></button></div>
+    
     
   </a>
   {{/each}}

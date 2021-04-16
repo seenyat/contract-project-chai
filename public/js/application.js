@@ -1,6 +1,8 @@
 // MapBox
 
+let mapbox = document.querySelector('#mapbox')
 
+if(mapbox){
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2VlbnlhdCIsImEiOiJja25odW9sY3YzaXBmMnBwOWx4MXA5eWwyIn0.TL1Zyx2TDLUmkT-WShQiyQ';
 var map = new mapboxgl.Map({
   container : 'mapbox',
@@ -50,3 +52,4 @@ map.on('load', function () {
   });
 });
 
+}

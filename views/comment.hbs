@@ -1,16 +1,20 @@
 {{#if comments}}
-<div class="m-5 container">
+<div class="p-5 container">
   <div class="title">Комментарии</div>
 {{#each comments}}
   {{>commentsingle}}
 {{/each}}
 </div>
 {{else}}
-<h2 class="message is-2">Комментариев пока нет</h2>
+<article class="message ">
+  <div class="message-body">
+Комментариев пока нет  😞</div>
+</article>
 {{/if}}
 
 {{!-- {{username.username}} --}}
-<div class="columns">
+
+
 {{#if username}}
 
 
@@ -67,8 +71,4 @@
 
   </form>
 </div>
-<div class="column"></div>
-
-</div>
 {{/if}}
-</div>

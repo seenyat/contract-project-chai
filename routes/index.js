@@ -50,7 +50,9 @@ router.get('/teaname/:id', async function (req, res) {
 })
 
 router.delete('/tea/:id', async function (req, res) {
-  
+  console.log(req.params)
+  await Tea.deleteOne({_id:req.params.id}) 
+  res.send('delete') 
 })
 
 router.post('/tea/add', upload.single('picture'),  async function (req, res) {

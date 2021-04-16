@@ -22,19 +22,20 @@ if(updateUser){
   })
 }
 
-const deleteOne = document.querySelector('.delete-button')
-deleteOne.addEventListener('click', async(event)=>{
-  console.log(event.target);
-  event.preventDefault()
-  event.stopPropagation();
-action ='/comments/delete/'+ event.currentTarget.id
-const response = await fetch(action,{
-  method:'delete'
+const deleteComment = document.querySelectorAll('.delete-button')
+if(deleteComment.length > 0 ){
+
+    deleteComment.forEach(el => {
+      el.addEventListener('click', async(event)=>{
+      console.log(event.target);
+      event.preventDefault()
+    action ='/comments/delete/'+ event.currentTarget.id
+    const response = await fetch(action,{
+      method:'delete'
+    })
+    let textResponse= await response.text()
+
+    el.parentElement.parentElement.parentElement.parentElement.remove()
+  })
 })
-let textResponse= await response.text()
-
-deleteOne.parentElement.parentElement.parentElement.parentElement.remove()
-
-
-
-})
+}
