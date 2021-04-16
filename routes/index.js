@@ -41,6 +41,7 @@ router.get('/teaname/:id', async function (req, res) {
   let teaObj = await Tea.findOne({name: nameTea})
   console.log(nameTea, teaObj)
   let comments = await Comment.find({article: teaObj._id}).populate('author')
+  
   if (req.session.user) {
     // console.log(req.session.user)
     return res.render('tea', {tea: teaObj, username: req.session.user, comments})
