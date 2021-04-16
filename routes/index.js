@@ -25,10 +25,17 @@ router.get('/', async function (req, res) {
   res.render('index', {teaList: teas})
 })
 
+router.get('/teastory', async function (req, res) {
+  if (req.session.user) {
+    return res.render('teastory', {username: req.session.user})
+  }
+  res.render('teastory')
+})
+
 router.get('/tea/:id', async function (req, res) {
   let id = req.params.id
   let teaObj = await Tea.findOne({_id: id})
-  // console.log(teaObj)
+  console.log(teaObj)
   let comments = await Comment.find({article: id}).populate('author')
   if (req.session.user) {
     // console.log(req.session.user)
@@ -50,7 +57,9 @@ router.get('/teaname/:id', async function (req, res) {
 })
 
 router.delete('/tea/:id', async function (req, res) {
-  
+  console.log(req.params)
+  await Tea.deleteOne({_id:req.params.id}) 
+  res.send('delete') 
 })
 
 router.post('/tea/add', upload.single('picture'),  async function (req, res) {

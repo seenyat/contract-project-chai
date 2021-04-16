@@ -52,7 +52,7 @@ teas.forEach(async el => {
   }
   Tea.create({
       name: el.name,
-      description: el.description,
+      description: el.description.slice(0, 100) + '...',
       image: el.image,
       location: el.location,
       locationCoords: el.locationCoords

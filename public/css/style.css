@@ -12,24 +12,66 @@ nav{
   display: grid;
 	grid-gap: 0.5em;
   align-content: stretch;
-  justify-content: space-around; 
+  justify-content: stretch; 
   place-items: stretch;
-  justify-items: center;
-  grid-template-columns: 50% 50%;
+  justify-items: stretch;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
 }
 .container.tea-list .card{
   transition: all ease 50ms;
+  background-color: rgb(238,255,238);
 }
 .container.tea-list .card:hover {
-  background-color: rgb(238,238,255);
+  /* background-color: rgb(238,255,238); */
+  background: #A1FFCE;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FAFFD1, #A1FFCE);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FAFFD1, #A1FFCE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* color: white; */
+  background: #DAD299;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #cefed9, #fef5b3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #ceffd8, #fff7b7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.container.tea-list .card .image{
+  opacity: .85;
+  
+}
+
+.tea{
+  justify-content: space-between !important;
+}
+.tea span{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.tea .buttons{
+  flex-wrap: nowrap !important;
+}
+.container.tea-list .card:hover .image{
+  /* color: white */
+  opacity: .65;
 }
 .logo{
   font-size: 1.5em;
   transition: all ease 50ms;
-  color: rgb(58, 169, 50);
+  color: rgb(113, 182, 108);
 }
 .logo:hover{
   font-weight: bold;
   color: rgb(48, 149, 30) !important;
 }
+.image img{
+  object-fit: cover;
+}
 
+form.box{
+  position: relative;
+}
+
+#edit-profile-form{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}

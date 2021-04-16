@@ -10,9 +10,9 @@ router.post('/add', async function (req, res) {
     author: user._id,
     article: req.body.id,
   })
+  
 
-
-  // res.redirect('back');
+  res.redirect('back');
 })
 
 router.post('/comments/delete/:id', async function (req, res) {
@@ -23,5 +23,7 @@ router.post('/comments/delete/:id', async function (req, res) {
     article: req.body.id,
   })
 })
+
+
 
 module.exports = router;
