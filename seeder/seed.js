@@ -50,13 +50,13 @@ teas.forEach(async el => {
   } catch (error) {
     
   }
-  // Tea.create({
-  //     name: el.name,
-  //     description: el.description,
-  //     image: el.image,
-  //     location: el.location,
-  //     locationCoords: el.locationCoords
-  //   })
+  Tea.create({
+      name: el.name,
+      description: el.description,
+      image: el.image,
+      location: el.location,
+      locationCoords: el.locationCoords
+    })
 
 
 
