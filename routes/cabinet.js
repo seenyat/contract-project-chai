@@ -6,10 +6,10 @@ const Comment=require('../models/comment')
 
 
 router.get('/profile/:id', async(req, res) => {
-  const profile = await User.findById(req.params.id) 
-
-
-  res.render('cabinet',{user:profile,username:profile});
+  const profile =  await User.findById(req.params.id) 
+  const comments = await Comment.find({author:profile._id})
+   console.log(comments);
+  res.render('cabinet',{user:profile,username:profile,comments});
 });
 
 router.get('/admin/:id', async(req, res) => {
@@ -27,7 +27,8 @@ router.put('/profile/:id', async (req, res) => {
     { _id: req.params.id },
     {$set: { username: req.body.username,
               email: req.body.email,
-              role:req.boby.role  } } )
+              role:req.body.role,
+              } } )
 
 res.json(x)
 })
