@@ -7,7 +7,7 @@ const Comment=require('../models/comment')
 
 router.get('/profile/:id', async(req, res) => {
   const profile =  await User.findById(req.params.id) 
-  const comments = await Comment.find({author:profile._id})
+  const comments = await Comment.find({author:profile._id}).populate('author')
    console.log(comments);
   res.render('cabinet',{user:profile,username:profile,comments});
 });

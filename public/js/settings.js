@@ -1,8 +1,21 @@
 let addTea = document.querySelector('#addTea')
 let closeModal = document.querySelector('.modal-close')
 const deleteOne = document.querySelectorAll('#deletePost')
+const editProfile = document.querySelector('#edit-profile-form')
 
 
+
+if (editProfile){
+  editProfile.addEventListener('click', (e) => {
+    let inputs = document.querySelectorAll('form.box input');
+    inputs.forEach(el => {
+      el.disabled = false;
+      el.classList.toggle('disabled')
+    })
+
+    document.querySelector('.edit-form').style.display = 'block'
+  })
+}
 
 if (addTea){
   addTea.addEventListener('click', (e) => {

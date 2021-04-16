@@ -1,28 +1,81 @@
-<form name="update" action='/profile/{{username._id}}'>
-<div class="container">
-<article class="message is-success">
-  <div class="message-header">
-    <p>Profile</p>
+<div class="columns">
+  <div class="column"></div>
+
+<form name="update" class="box update-user m-5 is-half column" action='/profile/{{username._id}}'>
+<div class="button"id="edit-profile-form"type="submit" ><span class="icon is-small">
+      <i class="fas fa-edit"></i>
+    </span></div>
+<article class="is-success">
+  <div class="title">Профиль</div>
+
+  <div class="field">
+    <label class="label">Роль</label>
+  <div class="control  has-icons-left has-icons-right">
+    <div class="select is-large has-icons-left">
+    <select disabled name="role"class="select" id="role" value="{{user.role}}">
+      <option value="Администратор">Администратор</option>
+      <option value="Пользователь">Пользователь</option>
+    </select>
+    <span class="icon is-small is-left">
+      <i class="fas fa-envelope fa-lock"></i>
+    </span>
+    </div>
   </div>
-  
-  <div class="message-body">
-    <input id="username" > Логин :  {{user.username}}
-  </div>
-  <div class="message-body">
-   <input id="email">Почта  :  {{user.email}}
-  </div>
-  <div class="message-body">
-   <input  id="role" >Статус  : {{user.role}}
-  </div>
-  <div class="message-body">
-   
-   <div>Комментарии :{{#each comments}} 
-      {{this.content}},
-       {{/each}}</div> 
-  </div>
-  </div>
-</article>
-<button type="submit" >redact</button>
 </div>
 
+<div class="field">
+    <label class="label">Имя</label>
+
+  <div class="control has-icons-left has-icons-right">
+    <input class="input disabled is-medium" disabled id='username'type="text" value="{{user.username}}">
+    <span class="icon is-left">
+      <i class="fas fa-user fa-sm"></i>
+    </span>
+    <span class="icon is-right">
+      <i class="fas fa-edit fa-sm"></i>
+    </span>
+  </div>
+</div>
+
+
+<div class="field">
+    <label class="label">E-mail</label>
+
+  <div class="control has-icons-left has-icons-right">
+    <input disabled class="disabled input is-medium" type="email" id="email" value="{{user.email}}">
+    <span class="icon is-medium is-left">
+      <i class="fas fa-envelope"></i>
+    </span>
+    <span class="icon is-medium is-right">
+      <i class="fas fa-edit"></i>
+    </span>
+  </div>
+
+
+</div>
+    <div style="display:none"class="field edit-form">
+    <div class="control">
+<button class="button"id="edit-profile"type="submit" ><span class="icon is-small">
+      <i class="fas fa-edit"></i>
+    </span><span>Поменять</span> </button>
+    </div></div>
+
+   
+   <div class="section">
+     <div class="title">Комментарии</div>{{#each comments}} 
+      {{> commentsingle}}
+       {{/each}}
+       
+
+  
+
+</article>
+
+
 </form>
+<div class="column"></div>
+  </div>
+</div>
+</div>
+
+  </div>

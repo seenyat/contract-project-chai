@@ -7,7 +7,7 @@ if(updateUser){
     const action = event.target.action
     const username = document.querySelector('#username').value
     const email = document.querySelector('#email').value
-    const role= document.querySelector('#role')
+    const role= document.querySelector('#role').value
   console.log(username,email);
 
     const response = await fetch(action, {

@@ -65,3 +65,13 @@ nav{
 .image img{
   object-fit: cover;
 }
+
+form.box{
+  position: relative;
+}
+
+#edit-profile-form{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}

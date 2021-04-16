@@ -11,6 +11,7 @@
             {{tea.name}}
           </div>
         </div>
+        <input class="coords" value="{{tea.locationCoords}}"type="text">
         <div class="card-content ">
           <section class="section">
             <h2 class="title">О чае</h2>
@@ -19,6 +20,78 @@
           <section class="section">
             <h2 class="title">Место происхождения</h2>
             <div class="content">{{tea.location}}</div>
+            <div id="mapboxSingle" style='width: 100%; height: 600px;'></div>
+
+            <script>
+              let mapboxS = document.querySelector('#mapboxSingle')
+
+              if(mapboxS){
+              mapboxgl.accessToken = 'pk.eyJ1Ijoic2VlbnlhdCIsImEiOiJja25odW9sY3YzaXBmMnBwOWx4MXA5eWwyIn0.TL1Zyx2TDLUmkT-WShQiyQ';
+              console.log(123)
+              var map = new mapboxgl.Map({
+                container : 'mapboxSingle',
+                style : 'mapbox://styles/mapbox/streets-v11',
+                zoom : 3,
+                center : [120.99111298633977,23.78134985215216],
+                bearing : 17.6
+              });
+              map.loadImage('/861054.png', function(error, image) {
+                if (error) throw error;
+                // Add the loaded image to the style's sprite with the ID 'kitten'.
+                map.addImage('kitten', image);
+                });
+                let x = document.querySelector('.coords').value.split(',')
+              
+              map.on('load', function () {
+                map.addSource('places', {
+                    'type': 'geojson',
+                    'data': {
+                      'type': 'FeatureCollection',
+                      'features': {                          
+                            "type": "Feature",
+                            "properties": {
+                              "description": "<a href=\"/teaname/Китайский улун Да Хун Пао\" class=\"title\">Китайский улун Да Хун Пао</a><img src=\"/images/6.jpeg\"></img>Китайский улун Да Хун Пао (Большой Красный Халат) – производят в горах Уи в провинции Фуцзянь. О происхождении чая ходят разные легенды, в которых обязательно присутствует красный халат монаха. Отсюда и необычное название улуна. У этого чая лист имеет умеренный, средний уровень прожарки, но это не дает ему жженых или “костровых” привкусов, прожарка выполнена мастером высокого уровня. По цвету высушенный лист серо-коричневый с бордовыми оттенками. Особенности вкуса Да Хун Пао: стойкий аромат, напоминающим запах жареных орехов, с оттенками пряностей,сбалансированный вкус с нотками печеных фруктов и хлебных корочек, длительное сладковатое послевкусие, темно-каштановый, с глубоким янтарным оттенком цвет настоя. После 3-4 заварки настой чая “Большой Красный Халат” становится более мягким, с легкими фруктовыми оттенками Воздействие: гармонизирует эмоциональное состояние, улучшает настроение и концентрацию внимания, расслабляет и успокаивает. Для получения максимального объёма вкуса и насыщенного аромата, рекомендуем класть достаточное количество чайного листа - вплоть до 10 грамм на 100 мл гайвань или чайник и заваривать быстрыми проливами кипятком. Сбор: окрестности Уишань, пров. Фуцзянь, 2020 год",
+                              "icon": "kitten",
+                              "marker-size": "small"
+                            },
+                            "geometry": {
+                              "type": "Point",
+                              "coordinates": [...x]
+                            }
+                          }
+                      }
+                    } )
+
+                map.addLayer({
+                    'id': 'places',
+                    'type': 'symbol',
+                    'source': 'places',
+                    'layout': {
+                        'icon-image': '{icon}',
+                        'icon-allow-overlap': true
+                    }
+                });
+                map.on('click', 'places', function (e) {
+                    var coordinates = e.features[0].geometry.coordinates.slice();
+                    var description = e.features[0].properties.description;
+                    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                    }
+
+                    new mapboxgl.Popup()
+                        .setLngLat(coordinates)
+                        .setHTML(description)
+                        .addTo(map);
+                });
+                map.on('mouseenter', 'places', function () {
+                    map.getCanvas().style.cursor = 'pointer';
+                });
+                map.on('mouseleave', 'places', function () {
+                    map.getCanvas().style.cursor = '';
+                });
+              });
+              }
+            </script>
           </section>
           
           </div>
