@@ -15,7 +15,9 @@
    <input  id="role" >Статус  : {{user.role}}
   </div>
   <div class="message-body">
-   <input>Комментарии  :
+ {{#each comments}}   
+   <input>Комментарии : {{comments.content}}
+{{/each}}
   </div>
   </div>
 </article>
