@@ -27,8 +27,8 @@ nav{
 }
 .main-story{
   position: relative;
-  background: linear-gradient(180deg, rgba(11,8,46,0) 30%, rgba(238,238,238,1) 11%, rgba(238,238,238,1) 100%, rgba(0,212,255,1) 100%);
-  top:-500px;
+  background: linear-gradient(180deg, rgba(11,8,46,.3) 0%, rgba(238,238,238,1) 11%, rgba(238,238,238,1) 100%, rgba(0,212,255,1) 100%);
+  top:-900px;
 }
 .container.tea-list .card{
   transition: all ease 50ms;
