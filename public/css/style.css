@@ -21,7 +21,7 @@ nav{
 .background-soft{
   width: 100%;
   height: 100vh;
-  background: url(https://cleanshot-cloud-fra.s3.eu-central-1.amazonaws.com/media/15352/bU3yQAoZfmABXxGdguK6pZm2c17OUsnf0kc2ksKO.jpeg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDGV1LWNlbnRyYWwtMSJHMEUCIQCqSrCK%2Ffqzhe%2BrTI9ifG2aakz4%2Fp3OwUrgyL0vUDp1oQIgMigaZ15zsI3NhKuYo9mBRHYrm2M4dZZQNHhTQansYDoq2QEILBAAGgw5MTk1MTQ0OTE2NzQiDMBRXOSZkCBcMGggQyq2AblXxu84L%2BCzvOysfxNNKhE6go%2BAHY67a8PuAH%2Fa5f1P%2F4Qz3cTHg6b8QaOnLaoxEUnwkllYPIuSNhYqiaijR6y4aUKT21vRLOfsKVByvkKaFaFqmGszLSztUXpmifZ0%2BxFhE46DB35WYYsesiiPfUNr3hzVtMrXruP%2B8vlE78T2RG24YbpFqbbPsf0G3mTnVYsXZlZ2vPmjFIpGDFAggGjHeoM6H2LwcMIWDBH2R6KhjfEZHpHaMM3h5YMGOuABsgayGpeIHKTdlbu5RmLItzePksUlGEe71jGFQyhua0UcctCNJBz7L34WlNOd%2B0zwcqfQCoXAcSCO1UOjqlL%2BzD9cUBgi3nw25EG3FKJn9VoRgmlhdnFYZklb04tEpi%2BEMBDAZ03jgvEofEKiwd3L8JyV34LN3Dn0aO9nQxk79YJ9gKzi3bWv6UegGB5nHunYOF7PkongFnNtFETPvBmbauFD6jmLAME1p8It19bCD16VyHuj1U6HgndCmu2srzep58LhHW46omitu3qTDQTARf9JfiSVPK3GoG64QSJBPQI%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA5MF2VVMNIP6ASSXI%2F20210416%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20210416T124323Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Signature=f98cb3816659f5c0bb976bb4a44e0f4ed4d6d31a5af02b10114b3ef514736e89);
+  background: url(/images/back.jpeg);
   background-size: auto;
   background-size: cover;
 }
