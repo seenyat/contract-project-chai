@@ -15,7 +15,7 @@ nav{
   justify-content: stretch; 
   place-items: stretch;
   justify-items: stretch;
-  grid-template-columns: calc(100% / 4) calc(100% / 4) calc(100% / 4) calc(100% / 4);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 
 }
 .container.tea-list .card{
