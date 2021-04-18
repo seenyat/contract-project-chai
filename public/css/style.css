@@ -16,7 +16,6 @@ nav{
   place-items: stretch;
   justify-items: stretch;
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-
 }
 .background-soft{
   width: 100%;

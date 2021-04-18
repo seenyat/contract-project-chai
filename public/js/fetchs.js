@@ -1,4 +1,45 @@
 const updateUser = document.querySelector('.update-user')
+const registerUser = document.querySelector('.registration-form')
+
+if(registerUser){
+  registerUser.addEventListener('submit', async (event) => {
+    event.preventDefault()
+    // console.log(event.target)
+
+    const action = event.target.action
+    const {username,email,password,role} = event.target
+    let master = '0'
+    if(role.value == 'Администратор'){
+      master = document.querySelector('.registration-form').master
+    }
+    const response = await fetch(action, {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      },
+      body: JSON.stringify({ username: username.value, email: email.value, role: role.value,password: password.value,master: master.value })
+    })
+    let res = await response.text()
+
+    if(res === '100'){
+      window.location = '/'
+    }
+    let x = document.querySelector('.registration-form div:nth-child(1)')
+    let newMessage = document.createElement('div');
+    newMessage.innerHTML = `<article class="message is-danger">
+    <div class="message-body">
+      ${res}
+    </div>
+  </article>`
+    event.target.insertBefore(newMessage, x)
+
+    // console.log(username.value,email.value,password.value,role.value, master.value);
+
+    
+  //   let textResponse = await response.json()
+    
+  })
+}
 
 if(updateUser){
   updateUser.addEventListener('submit', async (event) => {

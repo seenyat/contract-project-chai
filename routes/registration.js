@@ -14,19 +14,26 @@ router.post('/register', async (req, res) => {
   let {username, email, password, role} = req.body
   // console.log(username, email, password, role)
 
+
   let checkUser = await User.find({email: email})
   if(checkUser.length > 0){
-    res.json({
-      status: 'failed, e-mail is already used'
-    })
+    res.render('index', (err, html) => {res.send(html)})
+    res.send('Ошибка, такая почта уже есть в базе')
     return
+  }
+  if (role == "Администратор"){
+    let {master} = req.body; 
+    if(master.toLowerCase() != 'черного'){
+      res.send('Вам еще рано в админы :(')
+      return 
+    }
   }
   let user = await User.create({
     username,email,password: bcrypt.hashSync(password), role
   })
   req.session.user = user
   // console.log(user)
-   res.redirect(302, '/');
+   res.send('100');
 });
 
 

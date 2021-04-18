@@ -4,9 +4,10 @@ const router = express.Router()
 const Comment = require('../models/comment')
 const path = require('path')
 
-var multer  = require('multer')
+const multer  = require('multer')
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
+    console.log(123)
     cb(null, 'public/images')
   },
   filename: function (req, file, cb) {
@@ -14,7 +15,7 @@ const storage = multer.diskStorage({
   }
 })
 
-var upload = multer({ storage: storage })
+const upload = multer({ storage: storage })
 
 router.get('/', async function (req, res) {
   let teas = await Tea.find({})
